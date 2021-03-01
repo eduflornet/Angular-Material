@@ -1,2 +1,2 @@
 # Angular-Material
-Styling Applications with Angular Material
+Styling Application with Angular Material
