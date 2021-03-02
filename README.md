@@ -9,8 +9,8 @@ Used tools:
 ## NodeJS: 14.15.4
 
 References:
-## [Getting Started with Angular Material](https://material.angular.io/guide/getting-started)
-## [Material Icons Guide](https://google.github.io/material-design-icons/)
+[Getting Started with Angular Material](https://material.angular.io/guide/getting-started)
+[Material Icons Guide](https://google.github.io/material-design-icons/)
 
 
 
