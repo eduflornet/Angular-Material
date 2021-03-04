@@ -1,3 +1,4 @@
+import { UserService } from './services/user.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,13 +11,17 @@ import { ContactmanagerAppComponent } from './contactmanager-app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // apply lazy loading for demo module
 const routes: Routes = [
   {
     path: '',
     component: ContactmanagerAppComponent,
-    children: [{ path: '', component: MainContentComponent }],
+    children: [
+      { path: ':id', component: MainContentComponent },
+      { path: '', component: MainContentComponent }
+    ],
   },
 
   { path: '**', redirectTo: 'contactmanager' },
@@ -31,10 +36,14 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
     FormsModule,
     RouterModule.forChild(routes),
+  ],
+  providers: [
+    UserService
   ],
 })
 export class ContactmanagerModule {}
